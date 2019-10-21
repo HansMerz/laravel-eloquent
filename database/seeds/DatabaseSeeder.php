@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             $number_comments = rand(1, 6);
 
             for ($i=0; $i < $number_comments; $i++) { 
-                $post->comments()->save(factory(App\Comment::class))->make();
+                $post->comments()->save(factory(App\Comment::class)->make());
             }
 
         });
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             $number_comments = rand(1, 6);
 
             for ($i=0; $i < $number_comments; $i++) { 
-                $video->comments()->save(factory(App\Comment::class))->make();
+                $video->comments()->save(factory(App\Comment::class)->make());
             }
 
         });
@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
     {
         $values = [];
 
-        for ($i=0; $i < $max; $i++) { 
+        for ($i=1; $i < $max; $i++) { 
             $values[] = $i;
         }
 
